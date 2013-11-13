@@ -5,7 +5,7 @@ import numpy as np
 
 class Point(np.ndarray):
 
-    def __new__(subtype, shape, dtype=np.float64, buffer=None, offset=0,
+    def __new__(subtype, shape, dtype=float, buffer=None, offset=0,
           strides=None, order=None, info=None):
         obj = np.ndarray.__new__(subtype, shape, dtype, buffer, offset, 
 			strides, order)
@@ -44,7 +44,7 @@ class DBSCAN(object):
 				if len(NeighborPts_dash) >= MinPts:
 					NeighborPts = NeighborPts.extend(NeighborPts_dash)
 				if not P_dash.isClusterMember:
-					C.add(P_dash)
+					C.append(P_dash)
 					P_dash.isClusterMember = True
 
 	def in_range(self, point, P_dash):
@@ -53,15 +53,15 @@ class DBSCAN(object):
 		
 		  
 	def regionQuery(self, P, eps):
-		"""docstring for passre"""
-		return [ point for point in D if self.in_range(point, P)]
+		"""docstring for regionQuery"""
+		return [point for point in D if self.in_range(point, P)]
 
 			
 if __name__ == '__main__':
 	assert len(sys.argv) > 1, " Input file must be provided."
 	input_file_name = sys.argv[1]
 	D = np.genfromtxt(input_file_name, delimiter=',')
-	D = Point(D.shape, dtype=np.float64)
+	D = Point(D.shape, dtype=np.float32)
 	eps = 0.0003
 	MinPts = 10
 	dbs = DBSCAN().dbscan(D, eps, MinPts)
