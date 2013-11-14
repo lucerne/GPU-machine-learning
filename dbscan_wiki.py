@@ -2,11 +2,14 @@ import sys
 import math
 import csv
 import numpy as np
+import copy 
 
 MAX_NUM_OF_CLUSTERS = 10 
+debug = True
+
 class Point(np.ndarray):
 
-    def __new__(subtype, shape, dtype=float, buffer=None, offset=0,
+    def __new__(subtype, shape, dtype=np.float64, buffer=None, offset=0,
           strides=None, order=None, info=None):
         obj = np.ndarray.__new__(subtype, shape, dtype, buffer, offset, 
 			strides, order)
@@ -24,14 +27,18 @@ class DBSCAN(object):
 	def __init__(self, ):
 		super(DBSCAN, self).__init__()
 
+	
 	def dbscan(self, D, eps, MinPts):
 		count = 0 
 		C = [[] for _ in range(MAX_NUM_OF_CLUSTERS)]
 		print C
 		for P in D:
+			assert self.in_range(P, P) == True
 			if not P.visited:
 				P.visited = True
 				NeighborPts = self.regionQuery(P, eps)
+				assert NeighborPts != None
+
 				if len(NeighborPts) < MinPts:
 					P.NOISE = True
 				else:
@@ -42,13 +49,13 @@ class DBSCAN(object):
 	       
 	def expandCluster(self, P, NeighborPts, c, eps, MinPts):
 		c.append(P)
-		NeighborPtsCopy = NeighborPts.copy()
-		for P_dash in NeighborPts:
+		assert NeighborPts != None
+		for P_dash in copy.deepcopy(NeighborPts):
 			if not P_dash.visited:
 				P_dash.visited = True
 				NeighborPts_dash = self.regionQuery(P_dash, eps)
 				if len(NeighborPts_dash) >= MinPts:
-					NeighborPts = NeighborPts.extend(NeighborPts_dash)
+					NeighborPts.extend(NeighborPts_dash)
 				if not P_dash.isClusterMember:
 					c.append(P_dash)
 					P_dash.isClusterMember = True
@@ -60,15 +67,14 @@ class DBSCAN(object):
 		  
 	def regionQuery(self, P, eps):
 		"""docstring for regionQuery"""
-		#return [point for point in D if self.in_range(point, P)]
 		result =  [point for point in D if self.in_range(point, P)]
-		if result is None:
-			result = []
-		print "***********************"
-		print P
-		print result
-		print
-		print "***********************"
+		if debug:
+			print "***********************"
+			print P
+			print "---"
+			for item in result:
+				print item
+			print
 		return result
 
 			
@@ -76,7 +82,7 @@ if __name__ == '__main__':
 	assert len(sys.argv) > 1, " Input file must be provided."
 	input_file_name = sys.argv[1]
 	X = np.genfromtxt(input_file_name, delimiter=',')
-	D = Point(X.shape, dtype=np.float32)
+	D = Point(X.shape, dtype=np.float64)
 	D[:] = X[:]
 	eps = 0.3
 	MinPts =1 
