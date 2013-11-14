@@ -3,24 +3,19 @@ import math
 import csv
 import numpy as np
 import copy 
+import time
 
-MAX_NUM_OF_CLUSTERS = 10 
-debug = True
+debug = False
 
-class Point(np.ndarray):
-
-    def __new__(subtype, shape, dtype=np.float64, buffer=None, offset=0,
-          strides=None, order=None, info=None):
-        obj = np.ndarray.__new__(subtype, shape, dtype, buffer, offset, 
-			strides, order)
-	obj.visited = False
-	obj.isClusterMember = False
-        return obj
-
-    def __array_finalize__(self,obj):
-        self.visited = getattr(obj, 'visited', None)
-        self.isClusterMember = getattr(obj, 'isClusterMember', None)
-
+class Point(object):
+	"""docstring for Test"""
+	def __init__(self, data):
+		self.data = data
+		self.label = 0
+		self.NOISE = False
+		self.visited = False
+		self.cluster = -1
+		self.isClusterMember = False
 
 class DBSCAN(object):
 	"""docstring for DBSCAN"""
@@ -29,62 +24,66 @@ class DBSCAN(object):
 
 	
 	def dbscan(self, D, eps, MinPts):
-		count = 0 
-		C = [[] for _ in range(MAX_NUM_OF_CLUSTERS)]
-		print C
+		C = -1 
 		for P in D:
 			assert self.in_range(P, P) == True
 			if not P.visited:
 				P.visited = True
 				NeighborPts = self.regionQuery(P, eps)
 				assert NeighborPts != None
-
 				if len(NeighborPts) < MinPts:
 					P.NOISE = True
 				else:
-					# pick new cluster
-					count += 1
-					c = C[count]
-					self.expandCluster(P, NeighborPts, c, eps, MinPts)
-	       
-	def expandCluster(self, P, NeighborPts, c, eps, MinPts):
-		c.append(P)
+					C += 1
+					self.expandCluster(P, NeighborPts, C, eps, MinPts)
+
+		for cluster in range(C+1):
+			print "*********************"
+			print "Cluster %d members are " % cluster
+			for P in D:
+				if P.cluster == cluster:
+					print P.label
+			print 
+
+
+	def expandCluster(self, P, NeighborPts, C, eps, MinPts):
+		P.cluster = C
+		P.isClusterMember = True
 		assert NeighborPts != None
-		for P_dash in copy.deepcopy(NeighborPts):
+		for P_dash in NeighborPts:
 			if not P_dash.visited:
 				P_dash.visited = True
 				NeighborPts_dash = self.regionQuery(P_dash, eps)
 				if len(NeighborPts_dash) >= MinPts:
 					NeighborPts.extend(NeighborPts_dash)
 				if not P_dash.isClusterMember:
-					c.append(P_dash)
+					P_dash.cluster = C 
 					P_dash.isClusterMember = True
 
 	def in_range(self, point, P_dash):
 		"""docstring for in_range"""
-		return np.sqrt(np.sum((point-P_dash)**2)) <= eps
+		return np.sqrt(np.sum((point.data-P_dash.data)**2)) <= eps
 		
 		  
 	def regionQuery(self, P, eps):
 		"""docstring for regionQuery"""
-		result =  [point for point in D if self.in_range(point, P)]
-		if debug:
-			print "***********************"
-			print P
-			print "---"
-			for item in result:
-				print item
-			print
-		return result
+		return [point for point in D if self.in_range(point, P)]
 
 			
 if __name__ == '__main__':
 	assert len(sys.argv) > 1, " Input file must be provided."
 	input_file_name = sys.argv[1]
 	X = np.genfromtxt(input_file_name, delimiter=',')
-	D = Point(X.shape, dtype=np.float64)
-	D[:] = X[:]
-	eps = 0.3
-	MinPts =1 
+	D = []
+	for row in X:
+		p = Point(row)
+		D.append(p)
+
+	#label all that points
+	for  i, point in enumerate(D):
+		point.label = i
+
+	eps = 1000
+	MinPts = 4 
 	dbs = DBSCAN().dbscan(D, eps, MinPts)
 

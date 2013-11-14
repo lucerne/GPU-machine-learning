@@ -5,7 +5,8 @@ the dataset that generated the mean and stddev
 """
 import numpy as np
 import matplotlib.pyplot as plt
-
+# Force matplotlib to not use any Xwindows backend.
+plt.use('Agg')
 X = np.random.rand(100, 1000)
 xs = np.mean(X, axis=1)
 ys = np.std(X, axis=1)
