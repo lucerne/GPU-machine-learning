@@ -1,0 +1,148 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+D2x_kernel	P2.py	/^  D2x_kernel = nvcc.SourceModule(D2x_source).get_function("D2x_kernel")$/;"	v
+EPSILON	P4.py	/^EPSILON    = np.float32(.005)$/;"	v
+N	P2.py	/^  N = np.int32(2**20)$/;"	v
+N	P3.py	/^  N = 2**20$/;"	v
+a	P2.py	/^  a = np.sin(np.pi*x)$/;"	v
+a	P3.py	/^  a = np.float32(np.random.random(N))$/;"	v
+add_neighbors2D	P5_serial.py	/^def add_neighbors2D(i, j, width, height, dataset):$/;"	f
+arguments	P4.py	/^                             arguments="float* d, double mu")$/;"	v
+block	P2.py	/^  block = (512,1,1)$/;"	v
+block	P4.py	/^  block = (32,32,1)$/;"	v
+block	P5A.py	/^    block = (32,32,1)$/;"	v
+block	P5AExtra.py	/^    block = (32,32,1)$/;"	v
+block	P5B.py	/^      block = (512,1,1)$/;"	v
+block	P5B.py	/^    block = (32,32,1)$/;"	v
+block	P5BExtra.py	/^      block = (512,1,1)$/;"	v
+block	P5BExtra.py	/^    block = (32,32,1)$/;"	v
+block	P5BExtra2.py	/^      block = (512,1,1)$/;"	v
+compact_kernel	P5BExtra2.py	/^  compact_kernel = nvcc.SourceModule(make_queue_source).get_function("make_queue")$/;"	v
+d1_block	P5BExtra2.py	/^  d1_block = (512,1,1)$/;"	v
+d1_grid	P5BExtra2.py	/^  d1_grid = (int(np.ceil(float(image.size)\/d1_block[0])), 1)$/;"	v
+d2_block	P5BExtra2.py	/^  d2_block = (32,32,1)$/;"	v
+d2_grid	P5BExtra2.py	/^  d2_grid = (int(np.ceil(float(width)\/d2_block[0])),$/;"	v
+d_D2a	P2.py	/^  d_D2a = gpu.zeros_like(d_a)$/;"	v
+d_a	P2.py	/^  d_a   = gpu.to_gpu(a)$/;"	v
+d_a	P3.py	/^  d_a = gpu.to_gpu(a)$/;"	v
+d_curr	P4.py	/^  d_curr = gpu.to_gpu(image)$/;"	v
+d_front_img	P5BExtra2.py	/^    d_front_img = gpu.empty(image.size, dtype=np.int32)$/;"	v
+d_front_queue	P5BExtra2.py	/^    d_front_queue = gpu.zeros(image.size, dtype=np.int32)$/;"	v
+d_grow	P5A.py	/^    d_grow  = gpu.zeros(image.shape, dtype=np.int8)$/;"	v
+d_grow	P5AExtra.py	/^    d_grow  = gpu.zeros(image.shape, dtype=np.int8)$/;"	v
+d_grow	P5B.py	/^    d_grow  = gpu.zeros(image.shape, dtype=np.int8)$/;"	v
+d_grow	P5BExtra.py	/^    d_grow  = gpu.zeros(image.shape, dtype=np.int8)$/;"	v
+d_grow	P5BExtra2.py	/^    d_grow = gpu.empty(image.shape, dtype=np.int8)$/;"	v
+d_image	P5A.py	/^    d_image = gpu.to_gpu(image)$/;"	v
+d_image	P5AExtra.py	/^    d_image = gpu.to_gpu(image)$/;"	v
+d_image	P5B.py	/^    d_image = gpu.to_gpu(image)$/;"	v
+d_image	P5BExtra.py	/^    d_image = gpu.to_gpu(image)$/;"	v
+d_image	P5BExtra2.py	/^    d_image = gpu.to_gpu(image)$/;"	v
+d_next	P4.py	/^  d_next = gpu.empty_like(d_curr)$/;"	v
+d_next_front	P5B.py	/^      d_next_front = gpu.empty(4*d_pixel_front.size, dtype=np.int32)$/;"	v
+d_next_front	P5B.py	/^    d_next_front = gpu.empty(image.shape, dtype=np.int32)$/;"	v
+d_next_front	P5BExtra.py	/^      d_next_front = gpu.empty(4*d_pixel_front.size, dtype=np.int32)$/;"	v
+d_next_front	P5BExtra.py	/^    d_next_front = gpu.empty(image.shape, dtype=np.int32)$/;"	v
+d_pixel_front	P5B.py	/^      d_pixel_front = gpu.to_gpu(pixel_front)$/;"	v
+d_pixel_front	P5BExtra.py	/^      d_pixel_front = gpu.to_gpu(pixel_front)$/;"	v
+dx	P2.py	/^  dx = np.float64(1.0\/float(N-1))$/;"	v
+end_time	P5A.py	/^  end_time = cu.Event()$/;"	v
+end_time	P5AExtra.py	/^  end_time = cu.Event()$/;"	v
+end_time	P5B.py	/^  end_time = cu.Event()$/;"	v
+end_time	P5BExtra.py	/^  end_time = cu.Event()$/;"	v
+end_time	P5BExtra2.py	/^  end_time = cu.Event()$/;"	v
+front_size	P5BExtra2.py	/^      front_size = np.int32(d_front_img[width*height-1:].get()[0])$/;"	v
+front_size	P5BExtra2.py	/^    front_size = np.int32(d_front_img[width*height-1:].get()[0])$/;"	v
+gpu_reduce	P3.py	/^def gpu_reduce(kernel, d_a):$/;"	f
+grid	P2.py	/^  grid = (int(np.ceil(float(N)\/block[0])),1)$/;"	v
+grid	P4.py	/^  grid  = (int(np.ceil(float(width)\/block[0])),$/;"	v
+grid	P5A.py	/^    grid = (int(np.ceil(float(width)\/block[0])),$/;"	v
+grid	P5AExtra.py	/^    grid = (int(np.ceil(float(width)\/block[0])),$/;"	v
+grid	P5B.py	/^      grid = (int(np.ceil(float(pixel_front.size)\/block[0])), 1)$/;"	v
+grid	P5B.py	/^    grid = (int(np.ceil(float(width)\/block[0])),$/;"	v
+grid	P5BExtra.py	/^      grid = (int(np.ceil(float(pixel_front.size)\/block[0])), 1)$/;"	v
+grid	P5BExtra.py	/^    grid = (int(np.ceil(float(width)\/block[0])),$/;"	v
+grid	P5BExtra2.py	/^      grid = (int(np.ceil(float(front_size)\/block[0])), 1)$/;"	v
+grow_kernel	P5A.py	/^  grow_kernel = nvcc.SourceModule(grow1_source).get_function("grow1_image")$/;"	v
+grow_kernel	P5AExtra.py	/^  grow_kernel = nvcc.SourceModule(grow1_source).get_function("grow1_image")$/;"	v
+grow_kernel	P5B.py	/^  grow_kernel = nvcc.SourceModule(grow2_source).get_function("grow2_image")$/;"	v
+grow_kernel	P5BExtra.py	/^  grow_kernel = module.get_function("grow2_image")$/;"	v
+grow_kernel	P5BExtra2.py	/^  grow_kernel = nvcc.SourceModule(grow_source).get_function("grow_image")$/;"	v
+grow_size	P5A.py	/^        grow_size = gpu.sum(d_grow, dtype=np.int32).get()$/;"	v
+grow_size	P5A.py	/^    grow_size = gpu.sum(d_grow, dtype=np.int32).get()$/;"	v
+grow_size	P5AExtra.py	/^      grow_size = gpu.sum(d_grow, dtype=np.int32).get()$/;"	v
+grow_size	P5AExtra.py	/^    grow_size = gpu.sum(d_grow, dtype=np.int32).get()$/;"	v
+grow_size_prev	P5A.py	/^        grow_size_prev = grow_size$/;"	v
+grow_size_prev	P5A.py	/^    grow_size_prev = 0$/;"	v
+grow_size_prev	P5AExtra.py	/^      grow_size_prev = grow_size$/;"	v
+grow_size_prev	P5AExtra.py	/^    grow_size_prev = 0$/;"	v
+grow_threshold	P5A.py	/^  grow_threshold = np.float32([0, 0.27]);$/;"	v
+grow_threshold	P5AExtra.py	/^  grow_threshold = np.float32([0, 0.27]);$/;"	v
+grow_threshold	P5B.py	/^  grow_threshold = np.float32([0, 0.27]);$/;"	v
+grow_threshold	P5BExtra.py	/^  grow_threshold = np.float32([0, 0.27]);$/;"	v
+grow_threshold	P5BExtra2.py	/^  grow_threshold = np.float32([0, 0.27]);$/;"	v
+ij2index	P5_serial.py	/^def ij2index(i, j, width, height):$/;"	f
+im_region	P5_serial.py	/^  im_region = np.zeros([height, width], dtype=np.int8)$/;"	v
+image	P4.py	/^  image = np.array(img.imread(in_file_name)[:,:,0], dtype=np.float32)$/;"	v
+image	P5A.py	/^  image = np.array(img.imread(in_file_name)[:,:,0], dtype=np.float32)$/;"	v
+image	P5AExtra.py	/^  image = np.array(img.imread(in_file_name)[:,:,0], dtype=np.float32)$/;"	v
+image	P5B.py	/^  image = np.array(img.imread(in_file_name)[:,:,0], dtype=np.float32)$/;"	v
+image	P5BExtra.py	/^  image = np.array(img.imread(in_file_name)[:,:,0], dtype=np.float32)$/;"	v
+image	P5BExtra2.py	/^  image = np.array(img.imread(in_file_name)[:,:,0], dtype=np.float32)$/;"	v
+image	P5_serial.py	/^  image = img.imread(in_file_name)[:,:,0]$/;"	v
+in_file_name	P4.py	/^in_file_name  = "Harvard_Tiny.png"$/;"	v
+in_file_name	P5A.py	/^  in_file_name  = "Harvard_Huge.png"$/;"	v
+in_file_name	P5AExtra.py	/^  in_file_name  = "Harvard_Huge.png"$/;"	v
+in_file_name	P5B.py	/^  in_file_name  = "Harvard_Huge.png"$/;"	v
+in_file_name	P5BExtra.py	/^  in_file_name  = "Harvard_Huge.png"$/;"	v
+in_file_name	P5BExtra2.py	/^  in_file_name  = "Harvard_Huge.png"$/;"	v
+in_file_name	P5_serial.py	/^in_file_name  = "Harvard_Small.png"$/;"	v
+in_range	P5_serial.py	/^def in_range(value, pair):$/;"	f
+index2ij	P5_serial.py	/^def index2ij(index, width, height):$/;"	f
+mean_variance	P4.py	/^def mean_variance(d_data):$/;"	f
+min_kernel	P3.py	/^  min_kernel = module.get_function("min_kernel")$/;"	v
+module	P3.py	/^  module = nvcc.SourceModule(minreduce_source)$/;"	v
+module	P4.py	/^module = nvcc.SourceModule(sharpen_source)$/;"	v
+module	P5BExtra.py	/^  module = nvcc.SourceModule(source_string)$/;"	v
+next_front	P5B.py	/^      next_front = d_next_front.get()$/;"	v
+next_front	P5B.py	/^    next_front = d_next_front.get()$/;"	v
+next_front	P5BExtra.py	/^      next_front = d_next_front.get()$/;"	v
+next_front	P5BExtra.py	/^    next_front = d_next_front.get()$/;"	v
+next_front	P5_serial.py	/^  next_front = set()$/;"	v
+out_file_name	P4.py	/^out_file_name = "Harvard_Sharpened_CPU.png"$/;"	v
+out_file_name	P5A.py	/^  out_file_name = "Harvard_GrowRegion_GPU_A.png"$/;"	v
+out_file_name	P5AExtra.py	/^  out_file_name = "Harvard_GrowRegion_GPU_A_Extra.png"$/;"	v
+out_file_name	P5B.py	/^  out_file_name = "Harvard_GrowRegion_GPU_B.png"$/;"	v
+out_file_name	P5BExtra.py	/^  out_file_name = "Harvard_GrowRegion_GPU_B_Extra.png"$/;"	v
+out_file_name	P5BExtra2.py	/^  out_file_name = "Harvard_GrowRegion_GPU_B_Extra2.png"$/;"	v
+out_file_name	P5_serial.py	/^out_file_name = "Harvard_GrowRegion_CPU.png"$/;"	v
+pixel_front	P5B.py	/^      pixel_front = np.unique(next_front[next_front != -1])$/;"	v
+pixel_front	P5BExtra.py	/^      pixel_front = np.unique(next_front[next_front != -1])$/;"	v
+scan_kernel	P5BExtra2.py	/^  scan_kernel = scan.InclusiveScanKernel(np.int32, "a+b")$/;"	v
+seed_kernel	P5A.py	/^  seed_kernel = nvcc.SourceModule(seed1_source).get_function("seed1_image")$/;"	v
+seed_kernel	P5AExtra.py	/^  seed_kernel = nvcc.SourceModule(seed1_source).get_function("seed1_image")$/;"	v
+seed_kernel	P5B.py	/^  seed_kernel = nvcc.SourceModule(seed2_source).get_function("seed2_image")$/;"	v
+seed_kernel	P5BExtra.py	/^  seed_kernel = module.get_function("seed2_image")$/;"	v
+seed_kernel	P5BExtra2.py	/^  seed_kernel = nvcc.SourceModule(seed_source).get_function("seed_image")$/;"	v
+seed_threshold	P5A.py	/^  seed_threshold = np.float32([0, 0.08]);$/;"	v
+seed_threshold	P5AExtra.py	/^  seed_threshold = np.float32([0, 0.08]);$/;"	v
+seed_threshold	P5B.py	/^  seed_threshold = np.float32([0, 0.08]);$/;"	v
+seed_threshold	P5BExtra.py	/^  seed_threshold = np.float32([0, 0.08]);$/;"	v
+seed_threshold	P5BExtra2.py	/^  seed_threshold = np.float32([0, 0.08]);$/;"	v
+seed_threshold	P5_serial.py	/^seed_threshold = [0, 0.08];$/;"	v
+sharpen_kernel	P4.py	/^sharpen_kernel = module.get_function("sharpen")$/;"	v
+start_time	P5A.py	/^  start_time = cu.Event()$/;"	v
+start_time	P5AExtra.py	/^  start_time = cu.Event()$/;"	v
+start_time	P5B.py	/^  start_time = cu.Event()$/;"	v
+start_time	P5BExtra.py	/^  start_time = cu.Event()$/;"	v
+start_time	P5BExtra2.py	/^  start_time = cu.Event()$/;"	v
+start_time	P5_serial.py	/^  start_time = time.time()$/;"	v
+stop_time	P5_serial.py	/^  stop_time = time.time()$/;"	v
+threshold	P5_serial.py	/^threshold      = [0, 0.27];$/;"	v
+var_kernel	P4.py	/^var_kernel = ReductionKernel(dtype_out=np.float64, neutral="0",$/;"	v
+variance	P4.py	/^  variance = 0$/;"	v
+x	P2.py	/^  x = np.linspace(0, 1, N)$/;"	v
