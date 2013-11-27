@@ -56,20 +56,6 @@ if __name__ == '__main__':
         # Add its neighbours to the next front
         add_neighbors2D(i, j, width, height, next_front)
 
-  # While the next front has pixels we need to process
-  while len(next_front) > 0:
-    # Swap front sets, this_front <= next_front, next_front <= new set
-    this_front, next_front = next_front, set()
-    # For all the indices in this front
-    for index in this_front:
-      i,j = index2ij(index, width, height)  # Get (i,j)
-      # If this front pixel isn't in the region, but it belongs in it
-      if im_region[i,j] == 0 and in_range(image[i,j], threshold):
-        # Add it!
-        im_region[i,j] = 1;
-        # Add its neighbours to the next front
-        add_neighbors2D(i, j, width, height, next_front)
-
   # Output
   stop_time = time.time()
   print "Serial: %f" % (stop_time - start_time)

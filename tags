@@ -4,45 +4,95 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-D	dbscan_wiki.py	/^	D = Point(X.shape, dtype=np.float32)$/;"	v	class:DBSCAN
-DBSCAN	dbscan_wiki.py	/^class DBSCAN(object):$/;"	c
-MAX_NUM_OF_CLUSTERS	dbscan_wiki.py	/^MAX_NUM_OF_CLUSTERS = 10 $/;"	v
-MinPts	dbscan_wiki.py	/^	MinPts =1 $/;"	v	class:DBSCAN
+DBSCAN	dbscan_wiki_plot.py	/^class DBSCAN(object):$/;"	c
+Demo	scrollbar.py	/^class Demo:$/;"	c
+DraggableRectangle	sample_matplotlib_gui.py	/^class DraggableRectangle:$/;"	c
+MAX_NUM_OF_CLUSTERS	dbscan_wiki_plot.py	/^MAX_NUM_OF_CLUSTERS = 10 $/;"	v
+MinPts	dbscan_wiki_plot.py	/^MinPts =1$/;"	v
 N	serialDBscan1.py	/^        N =perfDBScan(dataCl, eps, minClusterSize)[1]$/;"	v
-Point	dbscan_wiki.py	/^class Point(np.ndarray):$/;"	c
+Point	dbscan_wiki_plot.py	/^class Point(np.ndarray):$/;"	c
 Point	testing.py	/^class Point(np.ndarray):$/;"	c
-X	dbscan_wiki.py	/^	X = np.genfromtxt(input_file_name, delimiter=',')$/;"	v	class:DBSCAN
-__array_finalize__	dbscan_wiki.py	/^    def __array_finalize__(self,obj):$/;"	m	class:Point	file:
+X	sample_matplotlib_scatter_plot_gui.py	/^X = np.random.rand(100, 1000)$/;"	v
+__array_finalize__	dbscan_wiki_plot.py	/^    def __array_finalize__(self,obj):$/;"	m	class:Point	file:
 __array_finalize__	testing.py	/^    def __array_finalize__(self,obj):$/;"	m	class:Point	file:
-__init__	dbscan_wiki.py	/^	def __init__(self, ):$/;"	m	class:DBSCAN
-__new__	dbscan_wiki.py	/^    def __new__(subtype, shape, dtype=float, buffer=None, offset=0,$/;"	m	class:Point	file:
+__init__	dbscan_wiki_plot.py	/^	def __init__(self, ):$/;"	m	class:DBSCAN
+__init__	sample_matplotlib_gui.py	/^    def __init__(self, rect):$/;"	m	class:DraggableRectangle
+__init__	scrollbar.py	/^    def __init__(self, parent):$/;"	m	class:Demo
+__new__	dbscan_wiki_plot.py	/^    def __new__(subtype, shape, dtype=np.float64, buffer=None, offset=0,$/;"	m	class:Point	file:
 __new__	testing.py	/^    def __new__(subtype, shape, dtype=float, buffer=None, offset=0,$/;"	m	class:Point	file:
 a	testing.py	/^	a = np.array([1,2])$/;"	v
+a0	slider_demo.py	/^a0 = 5$/;"	v
+ax	sample_matplotlib_gui.py	/^ax = fig.add_subplot(111)$/;"	v
+ax	sample_matplotlib_scatter_plot_gui.py	/^ax = fig.add_subplot(111)$/;"	v
+axamp	slider_demo.py	/^axamp  = plt.axes([0.25, 0.15, 0.65, 0.03], axisbg=axcolor)$/;"	v
+axcolor	slider_demo.py	/^axcolor = 'lightgoldenrodyellow'$/;"	v
+axfreq	slider_demo.py	/^axfreq = plt.axes([0.25, 0.1, 0.65, 0.03], axisbg=axcolor)$/;"	v
+button	slider_demo.py	/^button = Button(resetax, 'Reset', color=axcolor, hovercolor='0.975')$/;"	v
+colorfunc	slider_demo.py	/^def colorfunc(label):$/;"	f
+connect	sample_matplotlib_gui.py	/^    def connect(self):$/;"	m	class:DraggableRectangle
 datL	serialDBscan1.py	/^    datL = data.shape[0]$/;"	v
 data	serialDBscan1.py	/^    data = impData(filename1)$/;"	v
 dataCl	serialDBscan1.py	/^    dataCl = np.zeros((dataFr, 2), dtype=np.float32)$/;"	v
 dataFr	serialDBscan1.py	/^    dataFr = datL\/16$/;"	v
-dbs	dbscan_wiki.py	/^	dbs = DBSCAN().dbscan(D, eps, MinPts)$/;"	v	class:DBSCAN
-dbscan	dbscan_wiki.py	/^	def dbscan(self, D, eps, MinPts):$/;"	m	class:DBSCAN
+dbscan	dbscan_wiki_plot.py	/^	def dbscan(self, D, eps, MinPts):$/;"	m	class:DBSCAN
+debug	dbscan_wiki_plot.py	/^debug = True$/;"	v
+disconnect	sample_matplotlib_gui.py	/^    def disconnect(self):$/;"	m	class:DraggableRectangle
+dr	sample_matplotlib_gui.py	/^    dr = DraggableRectangle(rect)$/;"	v
+drs	sample_matplotlib_gui.py	/^drs = []$/;"	v
 end	serialDBscan1.py	/^        end = time.time()$/;"	v
-eps	dbscan_wiki.py	/^	eps = 0.3$/;"	v	class:DBSCAN
+eps	dbscan_wiki_plot.py	/^eps = 0.3$/;"	v
 eps	serialDBscan1.py	/^    eps = 512.0$/;"	v
-expandCluster	dbscan_wiki.py	/^	def expandCluster(self, P, NeighborPts, c, eps, MinPts):$/;"	m	class:DBSCAN
+exitButton	scrollbar.py	/^    exitButton = Tkinter.Button(root, text = 'Exit', command =$/;"	v
+expandCluster	dbscan_wiki_plot.py	/^	def expandCluster(self, P, NeighborPts, c, eps, MinPts, D):$/;"	m	class:DBSCAN
+f0	slider_demo.py	/^f0 = 3$/;"	v
+fig	sample_matplotlib_gui.py	/^fig = plt.figure()$/;"	v
+fig	sample_matplotlib_scatter_plot_gui.py	/^fig = plt.figure()$/;"	v
 filename1	serialDBscan1.py	/^    filename1 = "CG56_LCMV_total.csv"$/;"	v
 filename2	serialDBscan1.py	/^    filename2 = "CG56_LCMV_OT-I.csv"$/;"	v
+hull_height	scrollbar.py	/^		hull_height = 200,$/;"	v	class:Demo
+hull_width	scrollbar.py	/^		hull_width = 200,$/;"	v	class:Demo
 impData	serialDBscan1.py	/^def impData(filename):$/;"	f
-in_range	dbscan_wiki.py	/^	def in_range(self, point, P_dash):$/;"	m	class:DBSCAN
-input_file_name	dbscan_wiki.py	/^	input_file_name = sys.argv[1]$/;"	v	class:DBSCAN
+in_range	dbscan_wiki_plot.py	/^	def in_range(self, point, P_dash):$/;"	m	class:DBSCAN
+index	scrollbar.py	/^	index = list(self.box.get(0, 'end')).index('London')$/;"	v	class:Demo
+items	scrollbar.py	/^		items=('Sydney', 'Melbourne', 'Brisbane'),$/;"	v	class:Demo
+items	scrollbar.py	/^	items = ('Andamooka', 'Coober Pedy', 'Innamincka', 'Oodnadatta')$/;"	v	class:Demo
+label_text	scrollbar.py	/^		label_text='Cities',$/;"	v	class:Demo
+labelpos	scrollbar.py	/^		labelpos='nw',$/;"	v	class:Demo
 lgTransform	serialDBscan1.py	/^def lgTransform(data):$/;"	f
+listbox_height	scrollbar.py	/^		listbox_height = 6,$/;"	v	class:Demo
 maxClNo	serialDBscan1.py	/^            maxClNo = N$/;"	v
 maxClNo	serialDBscan1.py	/^    maxClNo = 0$/;"	v
 maxEps	serialDBscan1.py	/^            maxEps = eps$/;"	v
 minClusterSize	serialDBscan1.py	/^    minClusterSize = 100$/;"	v
 nwData	serialDBscan1.py	/^    nwData = lgTransform(data)$/;"	v
+on_motion	sample_matplotlib_gui.py	/^    def on_motion(self, event):$/;"	m	class:DraggableRectangle
+on_press	sample_matplotlib_gui.py	/^    def on_press(self, event):$/;"	m	class:DraggableRectangle
+on_release	sample_matplotlib_gui.py	/^    def on_release(self, event):$/;"	m	class:DraggableRectangle
+onpick	sample_matplotlib_scatter_plot_gui.py	/^def onpick(event):$/;"	f
 p	testing.py	/^	p = Point((2,), dtype='float32')$/;"	v
 perfDBScan	serialDBscan1.py	/^def perfDBScan(data, eps, minClusterSize):$/;"	f
 pltDBRes	serialDBscan1.py	/^def pltDBRes(db, data, n_clusters_):$/;"	f
 pltData	serialDBscan1.py	/^def pltData(dataX, dataY):$/;"	f
 pltDataMulti	serialDBscan1.py	/^def pltDataMulti(data):$/;"	f
-regionQuery	dbscan_wiki.py	/^	def regionQuery(self, P, eps):$/;"	m	class:DBSCAN
+radio	slider_demo.py	/^radio = RadioButtons(rax, ('red', 'blue', 'green'), active=0)$/;"	v
+rax	slider_demo.py	/^rax = plt.axes([0.025, 0.5, 0.15, 0.15], axisbg=axcolor)$/;"	v
+rects	sample_matplotlib_gui.py	/^rects = ax.bar(range(10), 20*np.random.rand(10))$/;"	v
+regionQuery	dbscan_wiki_plot.py	/^	def regionQuery(self, P, eps, D):$/;"	m	class:DBSCAN
+reset	slider_demo.py	/^def reset(event):$/;"	f
+resetax	slider_demo.py	/^resetax = plt.axes([0.8, 0.025, 0.1, 0.04])$/;"	v
+root	scrollbar.py	/^    root = Tkinter.Tk()$/;"	v
+root	toplevel.py	/^root= Tk();$/;"	v
+s	slider_demo.py	/^s = a0*np.sin(2*np.pi*f0*t)$/;"	v
+samp	slider_demo.py	/^samp = Slider(axamp, 'Amp', 0.1, 10.0, valinit=a0)$/;"	v
+selectionCommand	scrollbar.py	/^    def selectionCommand(self):$/;"	m	class:Demo
+selectioncommand	scrollbar.py	/^		selectioncommand=self.selectionCommand,$/;"	v	class:Demo
+sels	scrollbar.py	/^	sels = self.box.getcurselection()$/;"	v	class:Demo
+sfreq	slider_demo.py	/^sfreq = Slider(axfreq, 'Freq', 0.1, 30.0, valinit=f0)$/;"	v
 start	serialDBscan1.py	/^        start = time.time()$/;"	v
+t	slider_demo.py	/^t = np.arange(0.0, 1.0, 0.001)$/;"	v
+title	scrollbar.py	/^title = 'Pmw.ScrolledListBox'$/;"	v
+update	slider_demo.py	/^def update(val):$/;"	f
+usehullsize	scrollbar.py	/^		usehullsize = 1,$/;"	v	class:Demo
+widget	scrollbar.py	/^    widget = Demo(root)$/;"	v
+xs	sample_matplotlib_scatter_plot_gui.py	/^xs = np.mean(X, axis=1)$/;"	v
+ys	sample_matplotlib_scatter_plot_gui.py	/^ys = np.std(X, axis=1)$/;"	v
