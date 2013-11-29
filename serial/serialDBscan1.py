@@ -134,7 +134,7 @@ def pltDBRes(db, data, n_clusters_):
             plt.xlim(50000, 100000)
             plt.ylim(10000, 40000)
 
-    plt.title('Estimated number of clusters: %d' % n_clusters_)
+    plt.title('Using skilearn package\nEstimated number of clusters: %d' % n_clusters_)
     plt.show()
 
 
@@ -247,15 +247,18 @@ def pltDataMulti(data):
 if __name__ == '__main__':
     # import data
     filename1 = "CG56_LCMV_total.csv"
-    filename2 = "CG56_LCMV_OT-I.csv"
+    #filename1 = "total.csv"
+    filename1 = "head.csv"
     data = impData(filename1)
 
     # transform data
-    nwData = lgTransform(data)
+    #nwData = lgTransform(data)
+    nwData = data 
     datL = data.shape[0]
 
     # reduce data size
-    dataFr = datL/16
+    #dataFr = datL/16
+    dataFr = datL
     print dataFr
     dataCl = np.zeros((dataFr, 2), dtype=np.float32)
     dataCl[:,0] = nwData[:dataFr,0]
@@ -279,7 +282,8 @@ if __name__ == '__main__':
             break
 
     # Select one to perform plot
-    db, N = perfDBScan(dataCl, 2048, 100)
+    #db, N = perfDBScan(dataCl, 2048, 100)
+    db, N = perfDBScan(dataCl, 1000, 10)
     # Display clustering
     pltDBRes(db, dataCl, N)
     #pltData((nwData[:,0]),(nwData[:,1]))

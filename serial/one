@@ -1,0 +1,21 @@
+        if k == -1:
+            # Black used for noise.
+            col = 'k'
+            markersize = 6
+        
+        class_members = [index[0] for index in np.argwhere(labels == k)]
+
+        cluster_core_samples = [index for index in core_samples
+                                if labels[index] == k]
+        
+        for index in class_members:
+            x = data[index]
+            if index in core_samples and k != -1:
+                markersize = 14
+            else:
+                markersize = 6
+            plt.plot(x[0], x[1], 'o', markerfacecolor=col,
+                    markeredgecolor='k', markersize=markersize)
+            plt.xlim(50000, 100000)
+            plt.ylim(10000, 40000)
+
