@@ -383,3 +383,34 @@ if __name__ == '__main__':
 
 #______________________________________________________________________________
 # End
+
+
+
+def zorder(dataCl, mc_order):
+  """
+    Implement a 2d zorder curve
+    Want to handle min of > 10 million or > 2**24 data
+    Total Global Memory on each GPU: 5 Gb
+    Have Lx, Ly = 2**10
+    Number of boxes : 2**10 ~ 1 M boxes
+    
+    in: size(dataCl) = n
+    out: size(mc_order) = n, 0<= mc_order[i] < 2**20
+    
+    test on Lx, Ly = 2**1, level 1
+    """
+
+# determine mc for each data point
+
+def code (p, pmin, cell_size):
+  """
+    convert 2d point to a grid point, and return mc of grid point
+    """
+  s = int((p - pmin)/cell_size)
+  return interleave( s[0], s[1])
+
+def interleave(s0, s1):
+  """
+    Level 1
+    """
+  return s0 | (s1 << 1)

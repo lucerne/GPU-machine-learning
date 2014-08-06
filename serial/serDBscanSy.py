@@ -202,7 +202,7 @@ BORDER = 0
 
 if __name__ == '__main__':
     # import data
-    filename1 = "total_part.csv"
+    filename1 = "CG56_LCMV_total.csv"
     dataInp = impData(filename1)
     
     print "dataInp.shape", dataInp.shape
